@@ -1,12 +1,27 @@
 class DistrictRepository {
   constructor(data) {
-    this.stats = data.reduce((filteredStats, statistic) => {
-      if(!filteredStats.includes(statistic.Location)) {
-        filteredStats.push(statistic.Location)
+
+    const filteredDistricts = data.reduce((filteredDistricts, stat) => {
+      if(!filteredDistricts.includes(stat.Location)) {
+        filteredDistricts.push(stat.Location)
       }
 
-        return filteredStats
-      }, []);
+      return filteredDistricts
+    }, [])
+
+    const cardData = filteredDistricts.map((districtName) => {
+      let cardData = {};
+      cardData[districtName] = {}
+      data.forEach((stat) => {
+        if(stat.Location === districtName) {
+          cardData[districtName][stat.TimeFrame] = stat.Data
+        }
+      })
+
+      return cardData
+    })
+
+    this.stats = cardData;
   }  
 }
 
