@@ -2,11 +2,9 @@
 
 HeadCount 2.0 is a project designed to challenge your skills at manipulating data and creating small, reusable React components.  
 
-You will start the project by importing files containing various educational stats from districts within Colorado by year, per district.  
+The project was started by importing files containing various educational stats from districts within Colorado by year, per district.  
 
-In the spirit of TDD we have created some unit tests for you to start off with. These tests will help you break out calculation logic into a `DistrictRepository` class. After you finish `iteration 1` you'll move on to creating the rest of the react application on your own, with the expectation that you will continue to test the application on your own.
-
-This application was built using the `create-react-app` boilerplate. This boilerplate provides a lot of build in content and dependencies for free. Take a few minutes to read through [the documentation](https://github.com/facebookincubator/create-react-app), and remember to refer back to these docs if you run into unexpected issues.  
+This application was built using the `create-react-app` boilerplate. This boilerplate provides a lot of built in content and dependencies for free. See documentation here: [the documentation](https://github.com/facebookincubator/create-react-app).  
 
 ## Set Up
 
@@ -14,9 +12,9 @@ Fork this project
 
 Run `npm install` from the root directory
 
-Run `npm start` and visit localhost:3000 in your browser
+Run `npm start` and visit localhost:3000 in browser
 
-You can begin running your tests with `npm test`
+Begin running tests with `npm test`
 
 ## Project Goals
 
@@ -25,18 +23,9 @@ You can begin running your tests with `npm test`
 * Use propTypes to validate props passed to each component.
 * Write meaningful, comprehensive unit and integration tests.
 
-## Testing
-
-You may find the testing utilitiy Enzyme helpful for this project. To use it to your project, check out the following
-documentation:
-
-[create-react-app
-setupTests.js](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#initializing-test-environment)  
-[initializing the enzyme adapter](http://airbnb.io/enzyme/docs/installation/react-15.html)  
-
 ## Project Requirements
 
-This project is broken out into multiple iterations. You are expected to complete all required iterations for a passing score, additional extensions are provided to push your comfort level.  
+This project is broken out into multiple iterations.  
 
 ### Data Access Layer
 
