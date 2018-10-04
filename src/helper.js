@@ -1,8 +1,8 @@
 class DistrictRepository {
   constructor(data) {
     const filteredDist = data.reduce((filteredDistricts, stat) => {
-      if (!filteredDistricts.includes(stat.Location)) {
-        filteredDistricts.push(stat.Location);
+      if (!filteredDistricts.includes(stat.Location.toUpperCase())) {
+        filteredDistricts.push(stat.Location.toUpperCase());
       }
 
       return filteredDistricts;
@@ -11,11 +11,16 @@ class DistrictRepository {
     this.stats = filteredDist.map(districtName => {
       const cardData = {};
       cardData.district = districtName;
-      cardData.dataPerYear = {};
+      cardData.stats = {};
       data.forEach(stat => {
-        if (stat.Location === districtName) {
-          cardData.dataPerYear[stat.TimeFrame] = stat.Data;
+        if(typeof stat.Data !== 'number') {
+          stat.Data = 0
         }
+
+        if (stat.Location.toUpperCase() === districtName) {
+          cardData.stats[stat.TimeFrame] = Math.round(stat.Data*1000)/1000;
+        }
+
       });
 
       return cardData;
@@ -23,9 +28,15 @@ class DistrictRepository {
   }
 
   findByName(districtName) {
-    this.stats.find((stat) => {
-      return stat.district == 'Colorado'; 
+    if(!districtName) {
+      return undefined
+    }
+    const found = this.stats.find(stat => {
+    
+      return stat.district.toUpperCase() === districtName.toUpperCase()
     })
+
+    return found
   }
 }
 
