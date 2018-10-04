@@ -31,12 +31,23 @@ class DistrictRepository {
     if(!districtName) {
       return undefined
     }
-    const found = this.stats.find(stat => {
-    
+    const found = this.stats.find(stat => {  
       return stat.district.toUpperCase() === districtName.toUpperCase()
     })
 
     return found
+  }
+
+  findAllMatches(districtName) {
+    if(!districtName) {
+      return this.stats
+    }
+
+    districtName = districtName.toUpperCase()
+    const foundMatch = this.stats.filter((stat) => {
+      return stat.district.includes(districtName.toUpperCase())
+    })
+    return foundMatch
   }
 }
 
