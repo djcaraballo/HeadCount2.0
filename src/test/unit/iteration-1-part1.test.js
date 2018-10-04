@@ -15,12 +15,12 @@ describe('DistrictRepository iteration 1 - part 1', () =>  {
   test('findByName returns an object with its individual district information', () => {
 
     expect(typeof district.findByName('Colorado')).toEqual('object');
-    expect(district.findByName('Colorado').district).toEqual('COLORADO');
+    expect(district.findByName('Colorado').location).toEqual('COLORADO');
   });
 
-  test('findByName search is not case sensitive', () => {
-    expect(district.findByName('ColoRAdo').district).toEqual('COLORADO');
-    expect(district.findByName('ACADEmY 20').district).toEqual('ACADEMY 20');
+  xtest('findByName search is not case sensitive', () => {
+    expect(district.findByName('ColoRAdo').location).toEqual('COLORADO');
+    expect(district.findByName('ACADEmY 20').location).toEqual('ACADEMY 20');
   });
 
   xtest('each district has a data object containing each year and its data as key value pairs.', () => {
