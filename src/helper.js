@@ -8,19 +8,24 @@ class DistrictRepository {
       return filteredDistricts;
     }, []);
 
-    const cardStats = filteredDist.map((districtName) => {
+    this.stats = filteredDist.map(districtName => {
       const cardData = {};
-      cardData[districtName] = {};
-      data.forEach((stat) => {
+      cardData.district = districtName;
+      cardData.dataPerYear = {};
+      data.forEach(stat => {
         if (stat.Location === districtName) {
-          cardData[districtName][stat.TimeFrame] = stat.Data;
+          cardData.dataPerYear[stat.TimeFrame] = stat.Data;
         }
       });
 
       return cardData;
     });
+  }
 
-    this.stats = cardStats;
+  findByName(districtName) {
+    this.stats.find((stat) => {
+      return stat.district == 'Colorado'; 
+    })
   }
 }
 
