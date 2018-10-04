@@ -20,7 +20,6 @@ class DistrictRepository {
         if (stat.Location.toUpperCase() === districtName) {
           cardData.stats[stat.TimeFrame] = Math.round(stat.Data*1000)/1000;
         }
-
       });
 
       return cardData;
@@ -43,7 +42,6 @@ class DistrictRepository {
       return this.stats
     }
 
-    districtName = districtName.toUpperCase()
     const foundMatch = this.stats.filter((stat) => {
       return stat.district.includes(districtName.toUpperCase())
     })
