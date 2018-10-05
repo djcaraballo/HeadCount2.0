@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CardContainer = () => {
+import StatCard from './StatCard'
+
+const CardContainer = ({ districtData }) => {
   return(
-    <h2>District</h2>
+    <div>
+      <StatCard districtData={districtData}/>
+    </div>
   )
 }
 
