@@ -6,10 +6,8 @@ import {data} from './data/kindergartners_in_full_day_program';
 class App extends Component {
   constructor(data) {
     super(data)
-    debugger
     // const { Location, TimeFrame, Data } = data
-    this.state = []
-    // debugger
+    this.state = {}
   }
 
   render() {
