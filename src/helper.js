@@ -20,7 +20,6 @@ class DistrictRepository {
         if (stat.Location.toUpperCase() === districtName) {
           cardData.stats[stat.TimeFrame] = Math.round(stat.Data*1000)/1000;
         }
-
       });
 
       return cardData;
@@ -31,12 +30,22 @@ class DistrictRepository {
     if(!districtName) {
       return undefined
     }
-    const found = this.stats.find(stat => {
-    
+    const found = this.stats.find(stat => {  
       return stat.district.toUpperCase() === districtName.toUpperCase()
     })
 
     return found
+  }
+
+  findAllMatches(districtName) {
+    if(!districtName) {
+      return this.stats
+    }
+
+    const foundMatch = this.stats.filter((stat) => {
+      return stat.district.includes(districtName.toUpperCase())
+    })
+    return foundMatch
   }
 }
 
