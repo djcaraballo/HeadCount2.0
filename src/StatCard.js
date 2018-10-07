@@ -19,6 +19,8 @@ const StatCard = () => {
         <li className="lessThan">2010: 0.123</li>
         <li className="greaterThan">2011: 0.765</li>
         <li className="lessThan">2012: 0.234</li>
+        <li className="lessThan">2013: 0.765</li>
+        <li className="lessThan">2014: 0.234</li>
       </ul>
     </div>
   )
