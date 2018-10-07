@@ -5,7 +5,9 @@
   border-radius: 1rem;
   box-shadow: 0 10px 6px -6px #777;
   box-sizing: border-box;
+  grid-column: auto/span 1;
   height: 22rem;
+  margin: 0;
   width: 15rem;
 }
 
