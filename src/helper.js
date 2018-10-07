@@ -30,7 +30,6 @@ class DistrictRepository {
     if(!districtName) {
       return undefined
     }
-    
     const found = this.stats.find(stat => {  
       return stat.district.toUpperCase() === districtName.toUpperCase()
     })

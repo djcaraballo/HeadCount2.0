@@ -15,4 +15,6 @@ describe('App component', () =>  {
     expect(wrapper.state('districtData').length).toEqual(181)
   })
 
+  // it('should pa')
+
 });
