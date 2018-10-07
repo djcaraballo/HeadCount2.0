@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import {data} from './data/kindergartners_in_full_day_program';
+import * as data from './data/kindergartners_in_full_day_program';
+import CardContainer from './CardContainer';
+import DistrictRepository from './helper';
 
 class App extends Component {
   constructor(data) {
     super(data)
-    // const { Location, TimeFrame, Data } = data
-    this.state = {}
+
+    this.state = {
+      districtData: []
+    }
+  }
+
+  componentDidMount() {
+    this.returnCleanData()
+  }
+
+  returnCleanData() {
+    const districtStats = new DistrictRepository(data);
+    this.setState({
+      districtData: districtStats.stats
+    })
   }
 
   render() {
     return (
-      <div>Welcome To Headcount 2.0</div>
+      <div>
+        <div>Welcome To Headcount 2.0</div>
+        <CardContainer districtData={this.state.districtData}/>
+      </div>
     );
   }
 }
