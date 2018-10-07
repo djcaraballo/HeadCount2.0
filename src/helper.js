@@ -45,6 +45,7 @@ class DistrictRepository {
     const foundMatch = this.stats.filter((stat) => {
       return stat.district.includes(districtName.toUpperCase())
     })
+    
     return foundMatch
   }
 }

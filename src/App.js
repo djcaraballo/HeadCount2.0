@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import {data} from './data/kindergartners_in_full_day_program';
+import * as data from './data/kindergartners_in_full_day_program';
+import CardContainer from './CardContainer';
+import DistrictRepository from './helper';
 
 class App extends Component {
   constructor(data) {
     super(data)
-    // const { Location, TimeFrame, Data } = data
+
     this.state = {
       districtData: []
     }
@@ -18,7 +20,6 @@ class App extends Component {
 
   returnCleanData() {
     const districtStats = new DistrictRepository(data);
-    console.log(districtStats)
     this.setState({
       districtData: districtStats.stats
     })
@@ -26,7 +27,10 @@ class App extends Component {
 
   render() {
     return (
-      <div>Welcome To Headcount 2.0</div>
+      <div>
+        <div>Welcome To Headcount 2.0</div>
+        <CardContainer districtData={this.state.districtData}/>
+      </div>
     );
   }
 }
