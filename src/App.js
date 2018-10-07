@@ -8,7 +8,6 @@ import DistrictRepository from './helper';
 class App extends Component {
   constructor(data) {
     super(data)
-
     this.state = {
       districtData: []
     }
@@ -18,11 +17,9 @@ class App extends Component {
     this.returnCleanData()
   }
 
-  returnCleanData() {
+  returnCleanData = () => {
     const districtStats = new DistrictRepository(data);
-    this.setState({
-      districtData: districtStats.stats
-    })
+    this.setState({ districtData: districtStats.stats })
   }
 
   render() {
