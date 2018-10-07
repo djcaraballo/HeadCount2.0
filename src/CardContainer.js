@@ -4,95 +4,26 @@ import PropTypes from 'prop-types';
 import StatCard from './StatCard';
 import './CardContainer.css'
 
-const CardContainer = (districtData) => {
-  // const districtName
-  // const districtStats
-  // const cardId
+const CardContainer = ({ districtData }) => {
+  const { stats } = districtData
 
+  const statCards = stats.map((districtStat, index) => {
+      let districtName = districtStat.district
+      let districtYearData = [{...districtStat.stats}]
+      let id = Date.now + index
+
+      return <StatCard 
+              key={id}
+              districtName={districtName}
+              districtYearData={districtYearData}
+              />
+  })
+  
   return(
     <div className="card-container">
       <h2>District</h2>
       <div className="card-wrapper">
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
-        <StatCard 
-          // districtName={districtName} 
-          // districtStats={districtStats}
-          // id={cardId}
-        />
+        {statCards}
       </div>
     </div>
   )

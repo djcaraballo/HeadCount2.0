@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './StatCard.css'
 
-const StatCard = () => {
+const StatCard = ({ districtName, districtYearData}) => {
   //if li value > 0.5 className="greaterThan"
   //if li value < 0.5 className="lessThan"
   return(
