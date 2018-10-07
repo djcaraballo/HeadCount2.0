@@ -7,7 +7,21 @@ class App extends Component {
   constructor(data) {
     super(data)
     // const { Location, TimeFrame, Data } = data
-    this.state = {}
+    this.state = {
+      districtData: []
+    }
+  }
+
+  componentDidMount() {
+    this.returnCleanData()
+  }
+
+  returnCleanData() {
+    const districtStats = new DistrictRepository(data);
+    console.log(districtStats)
+    this.setState({
+      districtData: districtStats.stats
+    })
   }
 
   render() {
