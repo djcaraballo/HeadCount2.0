@@ -1,0 +1,30 @@
+.stat-card {
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  border: 1px solid #ebebeb;
+  border-radius: 1rem;
+  box-shadow: 0 10px 6px -6px #777;
+  box-sizing: border-box;
+  height: 20rem;
+  width: 15rem;
+}
+
+li {
+  list-style-type: none;
+  line-height: 1.5em;
+  font-size: 1em;
+}
+
+.greaterThan {
+  color: #038198;
+  /*font-weight: bold;*/
+}
+
+.lessThan {
+  color: #ec03ac;
+  font-style: italic;
+}
+
+.district-name {
+  color: #525252;
+}
