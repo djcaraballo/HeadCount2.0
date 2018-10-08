@@ -1,12 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 
 import App from './App';
 import CardContainer from './CardContainer';
 
-describe('App component', () =>  {
-
+describe('App component', () => {
   test('it should match the snapshot', () => {
     const wrapper = shallow(<App />);
     expect(wrapper).toMatchSnapshot();
@@ -28,6 +26,6 @@ describe('App component', () =>  {
 
     expect(wrapper.state('districtData')).toEqual(expected)
     expect(wrapper.state('districtData').length).toEqual(1)
-  })
+  });
 
 });
