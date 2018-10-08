@@ -3,22 +3,24 @@ import PropTypes from 'prop-types';
 
 import './StatCard.css';
 
-const StatCard = ({ districtName, districtYearData }) => {
+const StatCard = ({ districtName, districtYearData, id }) => {
   const districtStats = Object.keys(districtYearData).map((year) => {
     if (districtYearData[year] > 0.5) {
       return (
-        <li className="greaterThan">
-          {year}
-          :
-          {districtYearData[year]}
+        <li
+          key={id}
+          className="greaterThan"
+        >
+          {year}: {districtYearData[year]}
         </li>
       );
     }
     return (
-      <li className="lessThan">
-        {year}
-        :
-        {districtYearData[year]}
+      <li
+        key={id}
+        className="lessThan"
+      >
+        {year}: {districtYearData[year]}
       </li>
     );
   });

@@ -13,7 +13,7 @@ const CardContainer = ({ districtData }) => {
       let id = Date.now + index
 
       return <StatCard 
-              key={id}
+              id={id}
               districtName={districtName}
               districtYearData={districtYearData}
               />
@@ -30,7 +30,7 @@ const CardContainer = ({ districtData }) => {
 }
 
 CardContainer.propTypes = {
-  districtData: PropTypes.array.isRequired
+  districtData: PropTypes.shape({}).isRequired
 }
 
 export default CardContainer;

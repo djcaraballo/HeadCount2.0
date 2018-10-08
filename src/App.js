@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <div>
         <div>Welcome To Headcount 2.0</div>
-        <Search districtData={districtData} handleChange={this.handleChange} handleSubmit={this.handleSubmit} inputValue={inputValue} />
+        <Search handleChange={this.handleChange} handleSubmit={this.handleSubmit} inputValue={inputValue} />
         <CardContainer districtData={districtData} />
       </div>
     );
