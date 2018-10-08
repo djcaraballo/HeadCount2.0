@@ -46,7 +46,7 @@ class DistrictRepository {
       return stat.district.includes(districtName.toUpperCase())
     })
     
-    return foundMatch
+    return {stats: foundMatch}
   }
 }
 
