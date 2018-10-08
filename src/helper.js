@@ -42,13 +42,23 @@ class DistrictRepository {
       return this.stats;
     }
 
-    const foundMatch = this.stats.filter((stat) => {
+    const foundMatches = this.stats.filter((stat) => {
       return stat.district.includes(districtName.toUpperCase());
     });
 
-    return { stats: foundMatch };
+    return { stats: foundMatches };
+  }
+
+  findAverage(districtName, dataArray) {
+    const districtSum = Object.values(this.findByName(districtName).stats).reduce((distSum, value) => {
+      distSum += Math.round(value * 1000) / 1000;
+
+      return distSum
+    }, 0)
+    const districtAvg = districtSum/Object.values(this.findByName(districtName).stats).length
+
+    return Math.round(districtAvg * 1000) / 1000;
   }
 }
-
 
 export default DistrictRepository;
