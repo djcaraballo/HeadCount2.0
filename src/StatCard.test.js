@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, expect, test, describe } from 'enzyme';
 
 import StatCard from './StatCard';
 

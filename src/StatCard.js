@@ -36,6 +36,7 @@ const StatCard = ({ districtName, districtYearData, id }) => {
 };
 
 StatCard.propTypes = {
+  id: PropTypes.number.isRequired,
   districtName: PropTypes.string.isRequired,
   districtYearData: PropTypes.shape({}).isRequired,
 };
