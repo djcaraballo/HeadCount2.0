@@ -15,16 +15,19 @@ class App extends Component {
       districtData: districtStats,
       inputValue: ''
     }
+
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange = (event) => {
+  handleChange(event) {
     const { value } = event.target
     this.setState({
       inputValue: value
     })
   }
 
-  handleSubmit = (event) => {
+  handleSubmit(event) {
     event.preventDefault()
     this.setState({
       districtData: districtStats.findAllMatches(this.state.inputValue)
