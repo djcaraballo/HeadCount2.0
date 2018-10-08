@@ -9,7 +9,7 @@ const CardContainer = ({ districtData }) => {
 
   const statCards = stats.map((districtStat, index) => {
       let districtName = districtStat.district
-      let districtYearData = [{...districtStat.stats}]
+      let districtYearData = {...districtStat.stats}
       let id = Date.now + index
 
       return <StatCard 
