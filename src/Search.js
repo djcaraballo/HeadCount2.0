@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Search = ({ districData, handleChange, handleSubmit, inputValue }) => {
-  return(
+const Search = ({ handleChange, handleSubmit, inputValue }) => {
+  return (
     <form onSubmit={handleSubmit}>
       <input className="search-input" placeholder="Search District" onChange={handleChange} value={inputValue} />
-      <button onClick={handleSubmit}>Submit</button>
+      <button type="submit" onClick={handleSubmit}>Submit</button>
     </form>
-  )
-}
+  );
+};
 
-
+Search.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  inputValue: PropTypes.string.isRequired,
+};
 
 export default Search;
